@@ -10,18 +10,22 @@ class PlotArguments(object):
     def __init__(
             self,
             data: pandas.DataFrame,
+            plot_type: str,
             title: str = None,
             x_title: str = None,
             y_title: str = None,
             x_axis: str = None,
+            group: str = None,
             trace_columns: [list, tuple, str] = None,
             **kwargs
     ):
         self.data = data
+        self.plot_type = plot_type
         self.title = title
         self.x_title = x_title
         self.y_title = y_title
         self.x_axis = x_axis
+        self.group = group
         self.trace_columns = trace_columns
 
     def validate(self) -> list:

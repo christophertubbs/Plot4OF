@@ -6,8 +6,6 @@ Put module documentation here
 import plotly.graph_objects as go
 
 import plotting.plot as plot
-import plotting.exceptions as exceptions
-from plotting import arguments as arguments
 
 
 class LinePlot(plot.Plot):
@@ -29,7 +27,7 @@ class LinePlot(plot.Plot):
             figure.add_trace(
                 go.Scatter(
                     x=self.args.data[self.args.x_axis],
-                    y=self.args.data[trace]
+                    y=trace
                 )
             )
 

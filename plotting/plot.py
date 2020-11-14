@@ -24,5 +24,5 @@ class Plot(object):
     def validate(self):
         invalid_arguments = self.args.validate()
 
-        if len(invalid_arguments) == 0:
+        if len(invalid_arguments) > 0:
             raise exceptions.MissingArgumentException(invalid_arguments)
