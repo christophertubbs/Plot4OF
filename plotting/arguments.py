@@ -40,8 +40,8 @@ class PlotArguments(object):
 
 
 class AnimatedPlotArguments(PlotArguments):
-    def __int__(self, animation_column: str, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, animation_column: str, **kwargs):
+        PlotArguments.__init__(self, **kwargs)
         self.animation_column = animation_column
 
     def validate(self) -> list:

@@ -14,6 +14,7 @@ __PLOT_TYPES = [
     "line",
 ]
 
+
 def create_commandline_parser() -> ArgumentParser:
     """
     Creates a command line parser for the script
@@ -51,6 +52,7 @@ def get_plot_arguments() -> arguments.PlotArguments:
     if parameters.type in ['line']:
         if is_animated:
             plot_arguments = arguments.AnimatedPlotArguments(
+                animation_column=parameters.group,
                 group=parameters.group,
                 data=frame,
                 plot_type=parameters.type
@@ -77,8 +79,9 @@ def main():
     plot_arguments = get_plot_arguments()
     graph = plot_factory.get_plot(plot_arguments)
     plot = graph.plot()
+    print("Plot created")
     plot.show()
 
 
 if __name__ == "__main__":
-    main() 
+    main()
